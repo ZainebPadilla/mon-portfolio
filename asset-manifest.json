@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/mon-portfolio/static/css/main.61b7e48d.css",
+    "main.js": "/mon-portfolio/static/js/main.85b81f47.js",
+    "static/media/dhparfum1.png": "/mon-portfolio/static/media/dhparfum1.ebecdc999796d174476c.png",
+    "static/media/dhparfum2.png": "/mon-portfolio/static/media/dhparfum2.b94c9456c1c38e794b9c.png",
+    "static/media/akin1.png": "/mon-portfolio/static/media/akin1.e9e6015e2145d635e8ff.png",
+    "static/media/zero_waste1.png": "/mon-portfolio/static/media/zero_waste1.d1e30e620ce18ba639e3.png",
+    "static/media/intuition3.png": "/mon-portfolio/static/media/intuition3.33d6581cfb377175bc35.png",
+    "static/media/intuition4.png": "/mon-portfolio/static/media/intuition4.8c6ec26b21e0db6dbd1c.png",
+    "static/media/zero_waste2.png": "/mon-portfolio/static/media/zero_waste2.1b9fe2609c7c0e0c62b8.png",
+    "static/media/intuition1.png": "/mon-portfolio/static/media/intuition1.f2be45f94e9ba3e24f8c.png",
+    "static/media/zero_waste3.png": "/mon-portfolio/static/media/zero_waste3.4ea80bff709a42177abd.png",
+    "static/media/dhparfum4.png": "/mon-portfolio/static/media/dhparfum4.6755f05f34b705b5f7f9.png",
+    "static/media/zero_waste4.png": "/mon-portfolio/static/media/zero_waste4.fd94298ffeb4730f118c.png",
+    "index.html": "/mon-portfolio/index.html",
+    "main.61b7e48d.css.map": "/mon-portfolio/static/css/main.61b7e48d.css.map",
+    "main.85b81f47.js.map": "/mon-portfolio/static/js/main.85b81f47.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61b7e48d.css",
+    "static/js/main.85b81f47.js"
+  ]
+}
