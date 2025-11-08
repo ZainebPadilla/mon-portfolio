@@ -1,30 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Import images
+import intuition1 from "../assets/images/intuition1.png";
+import zeroWaste1 from "../assets/images/zero_waste1.png";
+import dhParfum1 from "../assets/images/dhparfum1.png";
+import akin1 from "../assets/images/akin1.png";
+
 const projects = [
   {
     id: 1,
     title: "Intuition Chrome Extension",
     shortDescription: "A Chrome extension focused on blockchain-based claims and analytics.",
-    image: "/images/intuition.png"
+    image: intuition1
   },
   {
     id: 2,
     title: "Zero Waste Project",
     shortDescription: "An app to track waste and CO₂ emissions for restaurants and companies.",
-    image: "/images/zero_waste.png"
+    image: zeroWaste1
   },
   {
     id: 3,
     title: "E-commerce Website - DH Parfum",
     shortDescription: "Custom e-commerce website for a perfume entrepreneur using WordPress and WooCommerce.",
-    image: "/images/dhparfum.png"
+    image: dhParfum1
   },
   {
     id: 4,
-    title: "Real Estate Showcase",
-    shortDescription: "Showcase website for a real estate professional built with Ruby on Rails.",
-    image: "/images/real_estate.png"
+    title: "AKIN Construction",
+    shortDescription: "Professional showcase website with admin back-office built in Ruby on Rails.",
+    image: akin1
   }
 ];
 
@@ -38,7 +44,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map(project => (
           <Link key={project.id} to={`/project/${project.id}`}>
             <div className="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
