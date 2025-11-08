@@ -1,5 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 // Import images
 import intuition1 from "../assets/images/intuition1.png";
@@ -28,7 +30,7 @@ const projectData = {
     ],
     technologies: ["JavaScript", "Plasmo Framework", "Blockchain", "Chrome Extension API"],
     images: [
-      { src: intuition1, caption: "Floatting button to open the extension" },
+      { src: intuition1, caption: "Floating button to open the extension" },
       { src: intuition3, caption: "Viewing blockchain attestations on a website" },
       { src: intuition4, caption: "Other pages of the extension" }
     ]
@@ -73,7 +75,7 @@ const projectData = {
       "Admin back-office with CRUD for services, projects, team members, and client messages.",
       "Modern responsive design with Tailwind CSS, SEO-friendly structure, and autonomy for the client."
     ],
-    technologies: ["Ruby on Rails", "ActiveAdmin", "Tailwind CSS", "PostgreSQL", "Turbo", "Stimulus"],
+    technologies: ["Ruby on Rails", "ActiveAdmin", "Tailwind CSS", "PostgreSQL"],
     images: [
       { src: akin1, caption: "Homepage with project highlights" }
     ]
@@ -88,36 +90,91 @@ export default function ProjectDetail() {
 
   return (
     <div className="container mx-auto p-6">
-      <Link to="/" className="text-blue-600 hover:underline mb-4 inline-block">
-        ← Back to Home
-      </Link>
+  {/* Back link */}
+  <Link
+    to="/"
+    className="inline-block mb-4 px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition"
+  >
+    ← Back 
+  </Link>
 
-      <h1 className="text-4xl font-bold mb-2">{project.title}</h1>
-      <p className="text-gray-700 mb-4 italic">{project.shortDescription}</p>
+  {/* Header */}
+  <div className="text-center mb-8">
+    <h1 className="text-4xl md:text-5xl font-bold mb-2">{project.title}</h1>
+    <p className="text-gray-700 italic text-lg md:text-xl">{project.shortDescription}</p>
+  </div>
 
-      {project.description.map((text, idx) => (
-        <p key={idx} className="mb-4">{text}</p>
+  {/* Description */}
+  <div className="bg-gray-50 p-6 rounded-lg shadow-sm mb-8">
+    {project.description.map((text, idx) => (
+      <p key={idx} className="text-gray-800 mb-4 leading-relaxed">
+        {text}
+      </p>
+    ))}
+  </div>
+
+  {/* Technologies */}
+  <div className="mb-8">
+    <h2 className="text-2xl font-semibold mb-3">Technologies used:</h2>
+    <div className="flex flex-wrap gap-3">
+      {project.technologies.map((tech, idx) => (
+        <span
+          key={idx}
+          className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium"
+        >
+          {tech}
+        </span>
       ))}
-
-      <h2 className="text-2xl font-semibold mt-6 mb-2">Technologies used:</h2>
-      <ul className="list-disc list-inside mb-6">
-        {project.technologies.map((tech, idx) => (
-          <li key={idx}>{tech}</li>
-        ))}
-      </ul>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-        {project.images.map((img, idx) => (
-          <div key={idx}>
-            <img
-              src={img.src}
-              alt={`${project.title} screenshot ${idx + 1}`}
-              className="w-full  object-cover rounded"
-            />
-            {img.caption && <p className="text-gray-600 text-sm mt-1">{img.caption}</p>}
-          </div>
-        ))}
-      </div>
     </div>
+  </div>
+
+  {/* Carousel */}
+  <div className="mb-12">
+    <Carousel
+      showThumbs={false}
+      showIndicators={false}
+      showStatus={false}  
+      infiniteLoop
+      useKeyboardArrows
+      renderArrowPrev={(onClickHandler, hasPrev) =>
+        hasPrev && (
+          <button
+            onClick={onClickHandler}
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 text-3xl text-gray-400 font-bold z-10"
+          >
+            ‹
+          </button>
+        )
+      }
+      renderArrowNext={(onClickHandler, hasNext) =>
+        hasNext && (
+          <button
+            onClick={onClickHandler}
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 text-3xl text-gray-400 font-bold z-10"
+          >
+            ›
+          </button>
+        )
+      }
+      className="rounded-lg"
+    >
+      {project.images.map((img, idx) => (
+        <div key={idx} className="flex flex-col items-center">
+          <img
+            src={img.src}
+            alt={`${project.title} screenshot ${idx + 1}`}
+            className="w-full max-h-[80vh] object-contain mx-auto rounded-lg"
+          />
+          {img.caption && (
+            <p className="italic text-gray-500 font-medium ld mt-2 text-center">
+              {img.caption}
+            </p>
+          )}
+        </div>
+      ))}
+    </Carousel>
+  </div>
+</div>
+
   );
 }

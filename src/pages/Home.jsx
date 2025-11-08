@@ -37,13 +37,37 @@ const projects = [
 export default function Home() {
   return (
     <div className="container mx-auto p-6">
+
+      {/* Bio Section */}
       <section className="mb-12">
         <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
-        <p className="text-lg">
-          I am a Full Stack Developer with experience in React, Ruby on Rails, WordPress, and project management. Explore my projects below:
+        
+        <p className="text-lg mb-4">
+          I am a Full Stack Developer passionate about creating modern, scalable web applications.
+          I specialize in React, Ruby on Rails, WordPress, and building solutions that solve real-world problems.
+        </p>
+
+        <div className="flex flex-wrap gap-2 mb-4">
+          {["React", "Ruby on Rails", "WordPress", "JavaScript", "HTML/CSS", "GitHub"].map((skill) => (
+            <span key={skill} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">
+              {skill}
+            </span>
+          ))}
+        </div>
+
+        <p className="mb-4">
+          My projects range from innovative Chrome extensions with blockchain features, 
+          to e-commerce platforms and professional showcase websites with admin dashboards.
+        </p>
+
+        <p className="italic text-gray-600">
+          I enjoy turning complex problems into intuitive, user-friendly solutions and continuously learning new technologies.
         </p>
       </section>
 
+      <hr className="my-8 border-gray-300" />
+
+      {/* Projects Section */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map(project => (
           <Link key={project.id} to={`/project/${project.id}`}>
@@ -51,7 +75,7 @@ export default function Home() {
               <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
               <div className="p-4">
                 <h2 className="text-xl font-semibold">{project.title}</h2>
-                <p className="text-gray-600">{project.shortDescription}</p>
+                <p className="text-gray-600 mt-1">{project.shortDescription}</p>
               </div>
             </div>
           </Link>
