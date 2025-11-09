@@ -40,11 +40,11 @@ export default function Home() {
 
       {/* Bio Section */}
       <section className="mb-12">
-        <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
-        
+                
         <p className="text-lg mb-4">
-          I am a Full Stack Developer passionate about creating modern, scalable web applications.
-          I specialize in React, Ruby on Rails, WordPress, and building solutions that solve real-world problems.
+          Full Stack Developer, passionate about creating modern, scalable web applications.
+          Specialized in React, Ruby on Rails, WordPress, and building solutions that solve real-world problems.
+          Strong experiece in project management, able to handle whole projects for your enterprise !
         </p>
 
         <div className="flex flex-wrap gap-2 mb-4">

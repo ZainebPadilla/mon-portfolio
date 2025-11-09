@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <nav className="bg-gray-800 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="font-bold text-xl">My Portfolio</Link>
+        <Link to="/" className="font-bold text-xl">Zaineb DHAHBI - Fullstack Developper</Link>
       </div>
     </nav>
   );
