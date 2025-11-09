@@ -68,19 +68,26 @@ export default function Home() {
       <hr className="my-8 border-gray-300" />
 
       {/* Projects Section */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map(project => (
-          <Link key={project.id} to={`/project/${project.id}`}>
-            <div className="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
-              <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h2 className="text-xl font-semibold">{project.title}</h2>
-                <p className="text-gray-600 mt-1">{project.shortDescription}</p>
+      <section className="flex justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
+          {projects.map(project => (
+            <Link key={project.id} to={`/project/${project.id}`}>
+              <div className="border rounded-lg overflow-hidden shadow hover:shadow-lg transition bg-white">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-56 object-cover"
+                />
+                <div className="p-4">
+                  <h2 className="text-xl font-semibold">{project.title}</h2>
+                  <p className="text-gray-600 mt-2">{project.shortDescription}</p>
+                </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </section>
+
     </div>
   );
 }
